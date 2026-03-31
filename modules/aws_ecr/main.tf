@@ -4,7 +4,8 @@ resource "aws_ecr_repository" "ecr" {
   image_scanning_configuration {
     scan_on_push = true
   }
-  tags = {
-    Name = var.aws_ecr_name
-  }
+  tags = merge(var.default_tags, {
+    Name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecs-cluster"
+    map-migrated = var.map_migrated_tag
+  })
 }

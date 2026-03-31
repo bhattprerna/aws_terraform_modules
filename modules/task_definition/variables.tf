@@ -21,7 +21,21 @@ variable "default_tags" {
   type    = map(string)
   default = {}
 }
-variable "aws_ecr_name" {
-  description = "aws ecr repository name"
-  type        = string
+variable "network_mode" {
+    type = string
+}
+variable "cpu" {
+    type = number
+}
+variable "memory" {
+    type = number
+}
+variable "execution_role_arn" {
+    type = string
+}
+variable "task_definition_file" {
+  type = any
+}
+variable "task_definition_vars" {
+  default = null
 }
