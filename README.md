@@ -6,7 +6,6 @@ This repository contains reusable and production-ready Terraform modules for pro
 
 * **ECR Module** – Creates and manages AWS Elastic Container Registry repositories
 * **ECS Module** – Provisions ECS clusters and task definitions (Fargate compatible)
-* *(More modules like VPC, ALB can be added later)*
 
 ## 🎯 Purpose
 
