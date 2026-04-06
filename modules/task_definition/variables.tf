@@ -39,3 +39,6 @@ variable "task_definition_file" {
 variable "task_definition_vars" {
   default = null
 }
+variable "task_role_arn" {
+  type = string
+}

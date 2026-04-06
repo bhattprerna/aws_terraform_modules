@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   memory = var.memory
 
   execution_role_arn = var.execution_role_arn
-  task_role_arn      = var.execution_role_arn
+  task_role_arn      = var.task_role_arn
   container_definitions = templatefile(
     var.task_definition_file,
     var.task_definition_vars
