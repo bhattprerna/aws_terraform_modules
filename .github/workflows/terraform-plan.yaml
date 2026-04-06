@@ -36,6 +36,11 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v4
 
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       # Logging in to AWS
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
