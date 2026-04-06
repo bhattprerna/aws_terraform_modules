@@ -3,5 +3,5 @@ output "config_env" {
 }
 
 output "default_tags" {
-  value = lookup(local.config_path, "tags", {})
+  value = local.default_tags
 }
