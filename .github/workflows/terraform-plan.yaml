@@ -25,6 +25,9 @@ on:
         description: "AWS region name"
         type: string
         required: true
+    secrets:
+      SSH_PRIVATE_KEY:
+        required: true
 
 jobs:
   # This job runs Terraform Plan
