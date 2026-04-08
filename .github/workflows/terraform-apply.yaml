@@ -37,6 +37,8 @@ jobs:
       role-to-assume: ${{ inputs.role-to-assume }}
       role-session-name: ${{ inputs.role-session-name }}
       aws-region-name: ${{ inputs.aws-region-name }}
+    secrets:
+     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
   apply:
     # This job runs Terraform Apply
