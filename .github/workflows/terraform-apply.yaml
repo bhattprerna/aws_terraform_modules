@@ -28,7 +28,7 @@ jobs:
   # This job runs Terraform Plan
   plan:
     name: Plan (${{ inputs.env }})
-    uses: bhattprerna/aws_terraform_modules/.github/workflows/terraform-plan.yaml@v1.0.0
+    uses: bhattprerna/aws_terraform_modules/.github/workflows/terraform-plan.yaml@v1.0.1
     with:
       env: ${{ inputs.env }}
       role-to-assume: ${{ inputs.role-to-assume }}
