@@ -72,3 +72,9 @@ jobs:
         with:
           name: terraform_${{ github.sha }}_${{ inputs.env }}.plan
           path: infra/terraform/terraform_${{ github.sha }}_${{ inputs.env }}.plan
+      
+      # - name: Upload Terraform Plan
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: terraform_${{ github.sha }}_${{ inputs.env }}.plan
+      #     path: infra/terraform/terraform_${{ github.sha }}_${{ inputs.env }}.plan

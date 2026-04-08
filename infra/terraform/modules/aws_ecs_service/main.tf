@@ -15,7 +15,7 @@ resource "aws_ecs_service" "ecs_service" {
     security_groups  = var.aws_ecs_service_sg_id
   }
   tags = merge(var.default_tags, {
-    Name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecs-service"
+    name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecs-service"
     map-migrated = var.map_migrated_tag
   })
 }

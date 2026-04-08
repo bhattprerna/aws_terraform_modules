@@ -7,7 +7,7 @@ resource "aws_ecr_repository" "ecr" {
   }
 
   tags = merge(var.default_tags, {
-    Name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecr"
+    name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecr"
     map-migrated = var.map_migrated_tag
   })
 }
