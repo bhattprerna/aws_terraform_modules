@@ -1,5 +1,5 @@
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = var.cluster_name
+  name = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-cluster"
 
   tags = merge(var.default_tags, {
     Name         = "${var.org_name}-${var.app_name}-${var.service_name}-${var.env}-ecs-cluster"

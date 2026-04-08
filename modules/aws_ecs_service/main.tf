@@ -8,6 +8,7 @@ resource "aws_ecs_service" "ecs_service" {
   platform_version       = var.aws_ecs_service_platform_version
   scheduling_strategy    = var.aws_ecs_service_scheduling_strategy
   enable_execute_command = var.enable_execute_command
+  
   network_configuration {
     subnets          = var.aws_ecs_service_vpc_subnet
     assign_public_ip = var.aws_ecs_service_assign_public_ip
