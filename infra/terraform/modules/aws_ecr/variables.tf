@@ -15,10 +15,10 @@ variable "env" {
   default = ""
 }
 
-variable "aws_ecr_name" {
-  description = "aws ecr repository name"
-  type        = string
-}
+# variable "aws_ecr_name" {
+#   description = "aws ecr repository name"
+#   type        = string
+# }
 
 variable "aws_repository_image_tag_mutability" {
   default = "MUTABLE"
