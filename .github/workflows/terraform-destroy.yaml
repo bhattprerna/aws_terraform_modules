@@ -1,0 +1,57 @@
+name: Terraform Destroy
+
+on:
+  workflow_call:
+    inputs:
+      env:
+        description: "Environment"
+        required: true
+        type: string
+      role-to-assume:
+        description: "AWS Role ARN"
+        required: true
+        type: string
+      role-session-name:
+        description: "AWS Session Name"
+        required: true
+        type: string
+      aws-region-name:
+        description: "AWS Region"
+        required: true
+        type: string
+
+    secrets:
+      SSH_PRIVATE_KEY:
+        required: true
+
+jobs:
+  destroy:
+    name: Destroy (${{ inputs.env }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ inputs.aws-region-name }}
+          role-to-assume: ${{ inputs.role-to-assume }}
+          role-session-name: ${{ inputs.role-session-name }}
+
+      - name: Terraform Install
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.8.2"
+
+      - name: Terraform Init
+        run: make ENV=${{ inputs.env }} terraform/init
+
+      - name: Terraform Destroy
+        run: make ENV=${{ inputs.env }} terraform/destroy
