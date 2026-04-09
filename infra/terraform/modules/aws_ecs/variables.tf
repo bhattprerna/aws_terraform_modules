@@ -21,6 +21,6 @@ variable "default_tags" {
   type    = map(string)
   default = {}
 }
-variable "cluster_name" {
-  type = string
-}
+# variable "cluster_name" {
+#   type = string
+# }
