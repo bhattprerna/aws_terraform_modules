@@ -61,10 +61,10 @@ variable "aws_ecs_service_vpc_subnet" {
   type        = list(string)
   default     = [""] 
 }
-variable "aws_ecs_service_assign_public_ip" {
+variable "assign_public_ip" {
   description = "Assign a public IP address to the ENI (Fargate launch type only). Valid values are true or false. Default false"
   type        = bool
-  default     = false
+  default     = true
 }
 variable "aws_ecs_service_sg_id" {
   description = "Security Groups associated with the task or service. If you do not specify a Security Group, the default Security Group for the VPC is used"

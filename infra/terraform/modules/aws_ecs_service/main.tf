@@ -11,7 +11,7 @@ resource "aws_ecs_service" "ecs_service" {
   
   network_configuration {
     subnets          = var.aws_ecs_service_vpc_subnet
-    assign_public_ip = var.aws_ecs_service_assign_public_ip
+    assign_public_ip = true
     security_groups  = var.aws_ecs_service_sg_id
   }
   tags = merge(var.default_tags, {
