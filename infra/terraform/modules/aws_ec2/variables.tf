@@ -8,7 +8,7 @@ variable "subnet_id" {
   type = string
 }
 variable "vpc_security_group_ids" {
-  type = list(string)
+  type = list()
 }
 variable "key_name" {
   type = string
